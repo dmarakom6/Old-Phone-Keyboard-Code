@@ -1,26 +1,9 @@
-import sys, getopt
+import sys
 import itertools
+from utils import main
 
 decoder_dict = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
 
-# gets the input file in command line
-def main(argv):
-   inputfile = str()
-   outputfile = str()
-   try:
-      opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
-   except getopt.GetoptError:
-      print('test.py -i <inputfile>')
-      sys.exit(2)
-   for opt, arg in opts:
-      if opt == '-h':
-         print('test.py -i <inputfile>')
-         sys.exit()
-      elif opt in ("-i", "--ifile"):
-         inputfile = arg
-      elif opt in ("-o", "--ofile"):
-         outputfile = arg
-   return inputfile
 
 
 with open(main(sys.argv[1:]), 'r+') as fobj:
